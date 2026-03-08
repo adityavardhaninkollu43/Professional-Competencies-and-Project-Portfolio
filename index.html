@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">PC<span>P</span></div>
+        <ul class="nav-links">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button onclick="logout()" class="nav-logout">Logout</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Professional Portfolio</h1>
+        <p>Strategic expertise meets technical execution.</p>
+        <a href="#portfolio" class="btn">View My Work</a>
+    </header>
+
+    <section id="profile" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Professional Profile</h2>
+            <button id="openEditProfileBtn" class="btn-add">Edit Bio</button>
+        </div>
+        <div class="profile-container">
+            <div class="profile-text">
+                <h3>About Me</h3>
+                <p id="displayProfileDesc">Strategic expert with a focus on technical execution and project management.</p>
+            </div>
+            <div class="profile-image">
+                <img src="default-avatar.png" id="userProfileImg" alt="User Profile">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-light">
+        <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <button id="openSkillModalBtn" class="btn-add">+ Add Skill</button>
+        </div>
+        <div class="skills-container" id="skillsContainer"></div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="section-header">
+            <h2 class="section-title">My Projects</h2>
+            <button id="openModalBtn" class="btn-add">+ Add Project</button>
+        </div>
+        <div class="portfolio-grid" id="workGrid"></div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Get In Touch</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button class="btn" style="border:none; cursor:pointer; width: 100%;">Send Message</button>
+        </div>
+    </section>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeM('projectModal')">&times;</span>
+            <h3>Add New Project</h3>
+            <div class="input-group"><label>Title</label><input type="text" id="projectTitle"></div>
+            <div class="input-group"><label>Description</label><textarea id="projectDesc"></textarea></div>
+            <div class="input-group"><label>URL</label><input type="text" id="projectURL"></div>
+            <div class="input-group"><label>Image</label><input type="file" id="projectImage" accept="image/*"></div>
+            <button id="addProjectBtn" class="btn-add" style="width:100%">Post Project</button>
+        </div>
+    </div>
+
+    <div id="skillModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeM('skillModal')">&times;</span>
+            <h3>Add Skill</h3>
+            <div class="input-group"><label>Skill Name</label><input type="text" id="skillNameInput"></div>
+            <button id="saveSkillBtn" class="btn-add" style="width:100%">Save Skill</button>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeM('editProfileModal')">&times;</span>
+            <h3>Edit Bio</h3>
+            <div class="input-group"><label>Your Bio</label><textarea id="editBioInput"></textarea></div>
+            <button id="saveBioBtn" class="btn-add" style="width:100%">Update Bio</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Professional Portfolio | Designed for Excellence</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
